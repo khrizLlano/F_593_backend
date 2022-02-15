@@ -1,5 +1,3 @@
-//Revisa el token de la authorization en el header de la 
-//petición y determina permiso de Authentication / Authorization
 import { Request, Response } from "express";
 import * as admin from 'firebase-admin'
 import { Respuesta } from "./models/respuesta";

@@ -5,11 +5,7 @@ import { Respuesta } from '../models/respuesta';
 export async function registro(req: Request, res: Response) {           
     try{     
         const { email, password, displayName, role } = req.body;
-        const userId = await admin.auth().getUserByEmail(email);
-        if(userId != null){
-            return res.status(400).json(Respuesta('El usuario ya esta registrado', `Usuario ${email}`, userId , 400));    
-        }
-
+        
         const user = await admin.auth().createUser({
             email,
             password,
